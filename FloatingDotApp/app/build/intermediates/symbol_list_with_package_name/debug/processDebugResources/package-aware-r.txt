@@ -3002,6 +3002,9 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable circle_background_blue
+drawable circle_background_green
+drawable circle_background_red
+drawable circle_background_yellow
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3213,6 +3216,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id autoScanSwitch
 id barrier
 id baseline
 id beginOnFirstDraw

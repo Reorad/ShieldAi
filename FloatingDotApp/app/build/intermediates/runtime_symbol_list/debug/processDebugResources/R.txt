@@ -3001,6 +3001,9 @@ int drawable btn_radio_off_to_on_mtrl_animation 0x7f07007e
 int drawable btn_radio_on_mtrl 0x7f07007f
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070080
 int drawable circle_background_blue 0x7f070081
+int drawable circle_background_green 0x7f0700fc
+int drawable circle_background_red 0x7f0700fd
+int drawable circle_background_yellow 0x7f0700fe
 int drawable common_full_open_on_phone 0x7f070082
 int drawable common_google_signin_btn_icon_dark 0x7f070083
 int drawable common_google_signin_btn_icon_dark_focused 0x7f070084
@@ -3212,6 +3215,7 @@ int id auto 0x7f080055
 int id autoComplete 0x7f080056
 int id autoCompleteToEnd 0x7f080057
 int id autoCompleteToStart 0x7f080058
+int id autoScanSwitch 0x7f0801fc
 int id barrier 0x7f080059
 int id baseline 0x7f08005a
 int id beginOnFirstDraw 0x7f08005b

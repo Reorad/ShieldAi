@@ -7,6 +7,7 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.PixelFormat
 import android.graphics.Point
@@ -39,6 +40,9 @@ class FloatingWidgetService : Service() {
     private lateinit var windowManager: WindowManager
     private lateinit var floatingView: View
     private lateinit var warningView: View
+    private lateinit var shieldIcon: View
+    private lateinit var sharedPreferences: SharedPreferences
+    
     private var mediaProjection: MediaProjection? = null
     private var virtualDisplay: VirtualDisplay? = null
     private var imageReader: ImageReader? = null
@@ -46,10 +50,17 @@ class FloatingWidgetService : Service() {
 
     private var lastTapTime: Long = 0
     private val DOUBLE_TAP_TIMEOUT = 300L
+    private var isAutoScanEnabled = false
+    private var isScanning = false
 
     override fun onBind(intent: Intent): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.getBooleanExtra("update_settings", false) == true) {
+            isAutoScanEnabled = intent.getBooleanExtra("auto_scan", false)
+            return START_NOT_STICKY
+        }
+
         val resultCode = intent?.getIntExtra("result_code", -1) ?: -1
         val resultData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent?.getParcelableExtra("projection_data", Intent::class.java)
@@ -86,8 +97,12 @@ class FloatingWidgetService : Service() {
     override fun onCreate() {
         super.onCreate()
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
+        sharedPreferences = getSharedPreferences("ShieldAISettings", Context.MODE_PRIVATE)
+        isAutoScanEnabled = sharedPreferences.getBoolean("auto_scan", false)
+
         floatingView = LayoutInflater.from(this).inflate(R.layout.floating_widget, null)
         warningView = LayoutInflater.from(this).inflate(R.layout.overlay_warning, null)
+        shieldIcon = floatingView.findViewById(R.id.redDotImage)
 
         val layoutFlag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -100,7 +115,7 @@ class FloatingWidgetService : Service() {
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
             layoutFlag,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
@@ -110,7 +125,6 @@ class FloatingWidgetService : Service() {
 
         windowManager.addView(floatingView, params)
 
-        val shieldIcon = floatingView.findViewById<View>(R.id.redDotImage)
         val touchSlop = ViewConfiguration.get(this).scaledTouchSlop
 
         var initialX = 0
@@ -141,14 +155,14 @@ class FloatingWidgetService : Service() {
                 MotionEvent.ACTION_UP -> {
                     if (!isMoved) {
                         val currentTime = System.currentTimeMillis()
-                        if (currentTime - lastTapTime < DOUBLE_TAP_TIMEOUT) {
-                            // Double Tap -> Scan Screen
+                        if (isAutoScanEnabled) {
                             captureAndScan()
                         } else {
-                            // Single Tap -> Open App
-                            val intentActivity = Intent(this@FloatingWidgetService, MainActivity::class.java)
-                            intentActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                            startActivity(intentActivity)
+                            if (currentTime - lastTapTime < DOUBLE_TAP_TIMEOUT) {
+                                captureAndScan()
+                            } else {
+                                openApp()
+                            }
                         }
                         lastTapTime = currentTime
                     }
@@ -159,9 +173,20 @@ class FloatingWidgetService : Service() {
         }
     }
 
+    private fun openApp() {
+        val intentActivity = Intent(this@FloatingWidgetService, MainActivity::class.java)
+        intentActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        startActivity(intentActivity)
+    }
+
     private fun setupImageReader() {
         val displayMetrics = resources.displayMetrics
         imageReader = ImageReader.newInstance(displayMetrics.widthPixels, displayMetrics.heightPixels, PixelFormat.RGBA_8888, 2)
+        
+        imageReader?.setOnImageAvailableListener({ reader ->
+            // Do nothing here, we'll acquire manually in captureAndScan
+        }, Handler(Looper.getMainLooper()))
+
         mediaProjection?.createVirtualDisplay(
             "ScreenCapture",
             displayMetrics.widthPixels,
@@ -175,53 +200,106 @@ class FloatingWidgetService : Service() {
     }
 
     private fun captureAndScan() {
-        val image = imageReader?.acquireLatestImage()
-        if (image != null) {
-            val planes = image.planes
-            val buffer: ByteBuffer = planes[0].buffer
-            val pixelStride = planes[0].pixelStride
-            val rowStride = planes[0].rowStride
-            val rowPadding = rowStride - pixelStride * image.width
-            val bitmap = Bitmap.createBitmap(image.width + rowPadding / pixelStride, image.height, Bitmap.Config.ARGB_8888)
-            bitmap.copyPixelsFromBuffer(buffer)
-            image.close()
+        if (isScanning) return
+        isScanning = true
+        
+        shieldIcon.animate().alpha(0.5f).setDuration(200).start()
 
-            val inputImage = InputImage.fromBitmap(bitmap, 0)
-            recognizer.process(inputImage)
-                .addOnSuccessListener { visionText ->
-                    analyzeScam(visionText.text)
+        Handler(Looper.getMainLooper()).postDelayed({
+            var image = imageReader?.acquireLatestImage()
+            
+            // If acquireLatestImage fails, try acquireNextImage
+            if (image == null) {
+                image = imageReader?.acquireNextImage()
+            }
+
+            if (image != null) {
+                try {
+                    val planes = image.planes
+                    val buffer: ByteBuffer = planes[0].buffer
+                    val pixelStride = planes[0].pixelStride
+                    val rowStride = planes[0].rowStride
+                    val rowPadding = rowStride - pixelStride * image.width
+                    
+                    val bitmap = Bitmap.createBitmap(image.width + rowPadding / pixelStride, image.height, Bitmap.Config.ARGB_8888)
+                    bitmap.copyPixelsFromBuffer(buffer)
+                    
+                    val inputImage = InputImage.fromBitmap(bitmap, 0)
+                    recognizer.process(inputImage)
+                        .addOnSuccessListener { visionText ->
+                            analyzeScam(visionText.text)
+                            isScanning = false
+                            shieldIcon.animate().alpha(1.0f).setDuration(200).start()
+                        }
+                        .addOnFailureListener {
+                            isScanning = false
+                            shieldIcon.animate().alpha(1.0f).setDuration(200).start()
+                            resetIcon()
+                        }
+                } catch (e: Exception) {
+                    isScanning = false
+                    shieldIcon.animate().alpha(1.0f).setDuration(200).start()
+                    e.printStackTrace()
+                } finally {
+                    image.close()
                 }
-        } else {
-            Toast.makeText(this, "Scanning...", Toast.LENGTH_SHORT).show()
-        }
+            } else {
+                isScanning = false
+                shieldIcon.animate().alpha(1.0f).setDuration(200).start()
+                Toast.makeText(this, "Screen busy, try again in a second", Toast.LENGTH_SHORT).show()
+            }
+        }, 300) // Slightly longer delay to ensure buffer is ready
     }
 
     private fun analyzeScam(text: String) {
         val lowerText = text.lowercase()
-        val bankScams = listOf("bank", "account", "locked", "suspended", "unauthorized", "login", "transaction", "transfer", "verification", "debit", "credit", "card", "paypal", "zelle", "venmo")
-        val prizeScams = listOf("won", "winner", "prize", "lottery", "gift card", "reward", "selected", "claim", "congratulations")
-        val urgencyScams = listOf("urgent", "immediately", "action required", "within 24 hours", "final notice", "penalty", "lawsuit", "police", "irs", "customs")
-        val techScams = listOf("virus", "malware", "hacked", "security alert", "system failure", "microsoft support", "apple support")
-        val jobScams = listOf("work from home", "easy money", "crypto", "investment", "passive income", "whatsapp job")
+        
+        val bankScams = listOf("bank", "account", "locked", "suspended", "unauthorized", "login", "transaction", "transfer", "verification", "debit", "credit", "card", "paypal", "zelle", "venmo", "verify your identity")
+        val urgencyScams = listOf("urgent", "immediately", "action required", "within 24 hours", "penalty", "lawsuit", "police", "irs", "customs", "arrest")
+        val techScams = listOf("virus", "malware", "hacked", "security alert", "microsoft support", "apple support")
 
-        val allKeywords = bankScams + prizeScams + urgencyScams + techScams + jobScams
-        val matchCount = allKeywords.count { lowerText.contains(it) }
+        val prizeScams = listOf("won", "winner", "prize", "lottery", "gift card", "reward", "selected", "claim", "congratulations")
+        val jobScams = listOf("work from home", "easy money", "crypto", "investment", "passive income", "whatsapp job", "earn money")
+
+        val redKeywords = bankScams + urgencyScams + techScams
+        val yellowKeywords = prizeScams + jobScams
+        
+        val redMatches = redKeywords.count { lowerText.contains(it) }
+        val yellowMatches = yellowKeywords.count { lowerText.contains(it) }
+        
         val urlPattern = Pattern.compile("(https?://\\S+)")
         val matcher = urlPattern.matcher(lowerText)
         val hasLink = matcher.find()
 
-        var scamScore = 0
-        if (matchCount >= 2) scamScore += 40
-        if (matchCount >= 4) scamScore += 30
-        if (hasLink && matchCount >= 1) scamScore += 50
-        val commonScamPhrases = listOf("verify your identity", "click here to", "account has been", "suspicious activity", "gift card for")
-        if (commonScamPhrases.any { lowerText.contains(it) }) scamScore += 40
-
-        if (scamScore >= 60) {
+        if (redMatches >= 1 && hasLink) {
+            updateShieldStatus("RED")
             showScamWarning()
+        } else if (redMatches >= 1 || (yellowMatches >= 1 && hasLink)) {
+            updateShieldStatus("YELLOW")
+            Toast.makeText(this, "Caution: Potential Scam Detected", Toast.LENGTH_SHORT).show()
+        } else if (yellowMatches >= 1) {
+            updateShieldStatus("YELLOW")
+            Toast.makeText(this, "Caution: Unusual content", Toast.LENGTH_SHORT).show()
         } else {
+            updateShieldStatus("GREEN")
             Toast.makeText(this, "Screen safe", Toast.LENGTH_SHORT).show()
         }
+        
+        Handler(Looper.getMainLooper()).postDelayed({
+            resetIcon()
+        }, 4000)
+    }
+
+    private fun updateShieldStatus(status: String) {
+        when (status) {
+            "RED" -> shieldIcon.setBackgroundResource(R.drawable.circle_background_red)
+            "YELLOW" -> shieldIcon.setBackgroundResource(R.drawable.circle_background_yellow)
+            "GREEN" -> shieldIcon.setBackgroundResource(R.drawable.circle_background_green)
+        }
+    }
+
+    private fun resetIcon() {
+        shieldIcon.setBackgroundResource(R.drawable.circle_background_blue)
     }
 
     private fun showScamWarning() {
@@ -244,6 +322,7 @@ class FloatingWidgetService : Service() {
         windowManager.addView(warningView, params)
         warningView.findViewById<View>(R.id.closeWarning).setOnClickListener {
             windowManager.removeView(warningView)
+            resetIcon()
         }
     }
 

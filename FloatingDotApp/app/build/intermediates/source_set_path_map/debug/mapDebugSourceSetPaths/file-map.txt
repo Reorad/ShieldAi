@@ -1,9 +1,9 @@
-com.example.floatingdot.app-jetified-play-services-basement-18.1.0-0 C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\res
-com.example.floatingdot.app-material-1.11.0-1 C:\Users\carla\.gradle\caches\9.0.0\transforms\0398f5242f5e91f48b9955d5399301da\transformed\material-1.11.0\res
-com.example.floatingdot.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-2 C:\Users\carla\.gradle\caches\9.0.0\transforms\058ac83e718039387de7e16c8a6a42b8\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
-com.example.floatingdot.app-constraintlayout-2.1.4-3 C:\Users\carla\.gradle\caches\9.0.0\transforms\105cc1a8cfc9dfc754fafb926fe4c342\transformed\constraintlayout-2.1.4\res
-com.example.floatingdot.app-cardview-1.0.0-4 C:\Users\carla\.gradle\caches\9.0.0\transforms\1a3e178460329b69db8674a89294a0a0\transformed\cardview-1.0.0\res
-com.example.floatingdot.app-jetified-play-services-base-18.1.0-5 C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\res
+com.example.floatingdot.app-material-1.11.0-0 C:\Users\carla\.gradle\caches\9.0.0\transforms\0398f5242f5e91f48b9955d5399301da\transformed\material-1.11.0\res
+com.example.floatingdot.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-1 C:\Users\carla\.gradle\caches\9.0.0\transforms\058ac83e718039387de7e16c8a6a42b8\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
+com.example.floatingdot.app-constraintlayout-2.1.4-2 C:\Users\carla\.gradle\caches\9.0.0\transforms\105cc1a8cfc9dfc754fafb926fe4c342\transformed\constraintlayout-2.1.4\res
+com.example.floatingdot.app-cardview-1.0.0-3 C:\Users\carla\.gradle\caches\9.0.0\transforms\1a3e178460329b69db8674a89294a0a0\transformed\cardview-1.0.0\res
+com.example.floatingdot.app-jetified-play-services-base-18.5.0-4 C:\Users\carla\.gradle\caches\9.0.0\transforms\20634edafe1c2763458f30b816a8aca0\transformed\jetified-play-services-base-18.5.0\res
+com.example.floatingdot.app-jetified-play-services-basement-18.4.0-5 C:\Users\carla\.gradle\caches\9.0.0\transforms\226d0d18e63c0d363196e082b1181b63\transformed\jetified-play-services-basement-18.4.0\res
 com.example.floatingdot.app-jetified-core-ktx-1.12.0-6 C:\Users\carla\.gradle\caches\9.0.0\transforms\2e28b8f44d722c353790928d270681e6\transformed\jetified-core-ktx-1.12.0\res
 com.example.floatingdot.app-coordinatorlayout-1.1.0-7 C:\Users\carla\.gradle\caches\9.0.0\transforms\424ffc3fbe14d23af2d722ea45a9d426\transformed\coordinatorlayout-1.1.0\res
 com.example.floatingdot.app-jetified-emoji2-views-helper-1.2.0-8 C:\Users\carla\.gradle\caches\9.0.0\transforms\5863322c95625da162f851d60e48a121\transformed\jetified-emoji2-views-helper-1.2.0\res

@@ -3,6 +3,7 @@ package com.example.floatingdot
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.media.projection.MediaProjectionManager
 import android.net.Uri
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier.TextClassifierOptions
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private var isAskingPermission = false
     private lateinit var textClassifier: TextClassifier
     private lateinit var projectionManager: MediaProjectionManager
+    private lateinit var sharedPreferences: SharedPreferences
 
     private val overlayPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -51,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        sharedPreferences = getSharedPreferences("ShieldAISettings", Context.MODE_PRIVATE)
         projectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
 
         checkOverlayPermission()
@@ -78,6 +82,19 @@ class MainActivity : AppCompatActivity() {
         val classifyButton = findViewById<Button>(R.id.classifyButton)
         val resultText = findViewById<TextView>(R.id.resultText)
         val startBubbleButton = findViewById<Button>(R.id.startBubbleButton)
+        val autoScanSwitch = findViewById<SwitchMaterial>(R.id.autoScanSwitch)
+
+        // Load saved setting
+        autoScanSwitch.isChecked = sharedPreferences.getBoolean("auto_scan", false)
+
+        autoScanSwitch.setOnCheckedChangeListener { _, isChecked ->
+            sharedPreferences.edit().putBoolean("auto_scan", isChecked).apply()
+            // If service is running, notify it of the change
+            val intent = Intent(this, FloatingWidgetService::class.java)
+            intent.putExtra("update_settings", true)
+            intent.putExtra("auto_scan", isChecked)
+            startService(intent)
+        }
 
         classifyButton.setOnClickListener {
             if (!::textClassifier.isInitialized) {

@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.floatingdot.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final SwitchMaterial autoScanSwitch;
 
   @NonNull
   public final Button classifyButton;
@@ -34,10 +38,12 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final MaterialButton startBubbleButton;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull Button classifyButton,
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull SwitchMaterial autoScanSwitch, @NonNull Button classifyButton,
       @NonNull TextInputEditText messageInput, @NonNull TextView resultText,
       @NonNull MaterialButton startBubbleButton) {
     this.rootView = rootView;
+    this.autoScanSwitch = autoScanSwitch;
     this.classifyButton = classifyButton;
     this.messageInput = messageInput;
     this.resultText = resultText;
@@ -71,6 +77,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.autoScanSwitch;
+      SwitchMaterial autoScanSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (autoScanSwitch == null) {
+        break missingId;
+      }
+
       id = R.id.classifyButton;
       Button classifyButton = ViewBindings.findChildViewById(rootView, id);
       if (classifyButton == null) {
@@ -95,8 +107,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, classifyButton, messageInput,
-          resultText, startBubbleButton);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, autoScanSwitch, classifyButton,
+          messageInput, resultText, startBubbleButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

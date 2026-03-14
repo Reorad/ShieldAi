@@ -9,9 +9,13 @@ color scam_red_light
 color text_grey
 color white
 drawable circle_background_blue
+drawable circle_background_green
+drawable circle_background_red
+drawable circle_background_yellow
 drawable ic_lock
 drawable ic_shield_blue
 drawable red_dot
+id autoScanSwitch
 id classifyButton
 id closeWarning
 id messageInput

@@ -47,22 +47,6 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="mediaProjection" />
-
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.floatingdot.androidx-startup"
-            android:exported="false" >
-            <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-                android:value="androidx.startup" />
-        </provider>
-
         <service
             android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
             android:directBootAware="true"
@@ -83,6 +67,20 @@
             android:authorities="com.example.floatingdot.mlkitinitprovider"
             android:exported="false"
             android:initOrder="99" />
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.floatingdot.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
