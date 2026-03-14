@@ -19,6 +19,8 @@ import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier.TextClassifierOptions
 import java.util.Locale
+import android.util.Patterns
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,15 +68,27 @@ class MainActivity : AppCompatActivity() {
         try {
             val baseOptionsBuilder = BaseOptions.builder()
                 .setModelAssetPath("bert_classifier.tflite")
-            
+
             val optionsBuilder = TextClassifierOptions.builder()
                 .setBaseOptions(baseOptionsBuilder.build())
-            
+
             val options = optionsBuilder.build()
             textClassifier = TextClassifier.createFromOptions(this, options)
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    fun extractUrls(message: String): List<String> {
+        val urls = mutableListOf<String>()
+
+        val matcher = Patterns.WEB_URL.matcher(message)
+
+        while (matcher.find()) {
+            urls.add(matcher.group())
+        }
+
+        return urls
     }
 
     private fun setupUI() {
@@ -83,6 +97,8 @@ class MainActivity : AppCompatActivity() {
         val resultText = findViewById<TextView>(R.id.resultText)
         val startBubbleButton = findViewById<Button>(R.id.startBubbleButton)
         val autoScanSwitch = findViewById<SwitchMaterial>(R.id.autoScanSwitch)
+
+        val safeBrowsingService = SafeBrowsingService()
 
         // Load saved setting
         autoScanSwitch.isChecked = sharedPreferences.getBoolean("auto_scan", false)
@@ -106,9 +122,9 @@ class MainActivity : AppCompatActivity() {
             if (inputText.isNotEmpty()) {
                 val classifierResult = textClassifier.classify(inputText)
                 val topCategory = classifierResult.classificationResult().classifications()[0].categories()[0]
-                
-                val isScam = topCategory.categoryName().equals("Negative", ignoreCase = true) || 
-                             inputText.contains("win", ignoreCase = true) || 
+
+                val isScam = topCategory.categoryName().equals("Negative", ignoreCase = true) ||
+                             inputText.contains("win", ignoreCase = true) ||
                              inputText.contains("prize", ignoreCase = true) ||
                              inputText.contains("urgent", ignoreCase = true)
 
@@ -118,6 +134,27 @@ class MainActivity : AppCompatActivity() {
                     "Result: Safe (${topCategory.categoryName()})"
                 }
                 resultText.text = resultString
+            }
+            val urls = extractUrls(inputText)
+
+            val hasUrl = Patterns.WEB_URL.matcher(inputText).find()
+
+            if (hasUrl)
+            {
+                for (url in urls)
+                {
+                    safeBrowsingService.checkUrl(url) { isThreat ->
+                        runOnUiThread {
+
+                            if (isThreat) {
+                                Toast.makeText(this, "⚠️ Unsafe URL detected", Toast.LENGTH_LONG)
+                                    .show()
+                            } else {
+                                Toast.makeText(this, "✅ URLs are safe", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -141,3 +178,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+

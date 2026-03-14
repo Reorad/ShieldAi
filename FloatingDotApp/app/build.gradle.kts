@@ -56,4 +56,7 @@ dependencies {
 
     // ML Kit Text Recognition for OCR (Updated version)
     implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
+
+    // HTTPS Depedency for Safe Browsing
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
