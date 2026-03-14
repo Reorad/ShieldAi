@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.floatingdot.app-mergeReleaseResources-3:/layout/activity_main.xml",
+        "source": "com.example.floatingdot.app-main-5:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.floatingdot.app-mergeReleaseResources-3:/layout/floating_widget.xml",
+        "source": "com.example.floatingdot.app-main-5:/layout/floating_widget.xml"
+    }
+]

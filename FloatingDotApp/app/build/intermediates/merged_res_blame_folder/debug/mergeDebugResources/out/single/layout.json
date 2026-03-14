@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\sebis\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-mergeDebugResources-3:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\sebis\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-6:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.floatingdot.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.example.floatingdot.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sebis\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-mergeDebugResources-3:\\layout\\floating_widget.xml",
+        "source": "C:\\Users\\sebis\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-6:\\layout\\floating_widget.xml"
+    }
+]

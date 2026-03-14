@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_lock
+drawable red_dot
+id messageInput
+id redDotImage
+layout activity_main
+layout floating_widget
+string app_name
+style Theme.FloatingDot
