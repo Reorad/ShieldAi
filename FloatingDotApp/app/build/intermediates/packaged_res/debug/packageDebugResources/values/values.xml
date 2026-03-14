@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="accent_blue">#E3F2FD</color>
     <color name="black">#FF000000</color>
+    <color name="primary_blue">#1E88E5</color>
+    <color name="primary_dark_blue">#1565C0</color>
+    <color name="scam_red">#B71C1C</color>
+    <color name="scam_red_light">#FFCDD2</color>
+    <color name="text_grey">#757575</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">ShieldAi</string>
     <style name="Theme.FloatingDot" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

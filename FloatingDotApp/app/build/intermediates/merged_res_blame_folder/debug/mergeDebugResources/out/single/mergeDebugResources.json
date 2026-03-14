@@ -1,22 +1,30 @@
 [
     {
-        "merged": "com.example.floatingdot.app-debug-31:/layout_activity_main.xml.flat",
-        "source": "com.example.floatingdot.app-main-33:/layout/activity_main.xml"
+        "merged": "com.example.floatingdot.app-debug-33:/layout_activity_main.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-debug-31:\\layout_floating_widget.xml.flat",
-        "source": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-33:\\layout\\floating_widget.xml"
+        "merged": "com.example.floatingdot.app-debug-33:/drawable_ic_lock.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/drawable/ic_lock.xml"
     },
     {
-        "merged": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-debug-31:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-33:\\layout\\activity_main.xml"
+        "merged": "com.example.floatingdot.app-debug-33:/drawable_ic_shield_blue.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/drawable/ic_shield_blue.xml"
     },
     {
-        "merged": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-debug-31:\\drawable_ic_lock.xml.flat",
-        "source": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-33:\\drawable\\ic_lock.xml"
+        "merged": "com.example.floatingdot.app-debug-33:/layout_overlay_warning.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/layout/overlay_warning.xml"
     },
     {
-        "merged": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-debug-31:\\drawable_red_dot.xml.flat",
-        "source": "C:\\Users\\carla\\.gradle\\daemon\\9.0.0\\com.example.floatingdot.app-main-33:\\drawable\\red_dot.xml"
+        "merged": "com.example.floatingdot.app-debug-33:/drawable_circle_background_blue.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/drawable/circle_background_blue.xml"
+    },
+    {
+        "merged": "com.example.floatingdot.app-debug-33:/layout_floating_widget.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/layout/floating_widget.xml"
+    },
+    {
+        "merged": "com.example.floatingdot.app-debug-33:/drawable_red_dot.xml.flat",
+        "source": "com.example.floatingdot.app-main-35:/drawable/red_dot.xml"
     }
 ]

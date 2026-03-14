@@ -51,6 +51,9 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     
-    // MediaPipe Tasks Text dependency
-    implementation("com.google.mediapipe:tasks-text:0.10.1")
+    // MediaPipe Tasks Text dependency (Updated version)
+    implementation("com.google.mediapipe:tasks-text:0.20230731")
+
+    // ML Kit Text Recognition for OCR (Updated version)
+    implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
 }

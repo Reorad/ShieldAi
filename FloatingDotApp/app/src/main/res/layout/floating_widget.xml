@@ -5,9 +5,12 @@
 
     <ImageView
         android:id="@+id/redDotImage"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/red_dot"
-        android:contentDescription="Floating Red Dot" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_shield_blue"
+        android:background="@drawable/circle_background_blue"
+        android:elevation="8dp"
+        android:contentDescription="ShieldAI Bubble" />
 
 </FrameLayout>

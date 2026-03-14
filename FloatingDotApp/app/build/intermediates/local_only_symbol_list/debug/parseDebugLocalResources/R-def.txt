@@ -1,14 +1,25 @@
 R_DEF: Internal format may change without notice
 local
+color accent_blue
 color black
+color primary_blue
+color primary_dark_blue
+color scam_red
+color scam_red_light
+color text_grey
 color white
+drawable circle_background_blue
 drawable ic_lock
+drawable ic_shield_blue
 drawable red_dot
 id classifyButton
+id closeWarning
 id messageInput
 id redDotImage
 id resultText
+id startBubbleButton
 layout activity_main
 layout floating_widget
+layout overlay_warning
 string app_name
 style Theme.FloatingDot

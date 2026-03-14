@@ -1,6 +1,9 @@
 package com.example.floatingdot
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.media.projection.MediaProjectionManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
@@ -13,24 +16,42 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier
 import com.google.mediapipe.tasks.text.textclassifier.TextClassifier.TextClassifierOptions
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private var isAskingPermission = false
     private lateinit var textClassifier: TextClassifier
+    private lateinit var projectionManager: MediaProjectionManager
 
     private val overlayPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         isAskingPermission = false
         if (!Settings.canDrawOverlays(this)) {
-            Toast.makeText(this, "Permission denied. App cannot work fully.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Overlay permission denied.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private val screenCaptureLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK && result.data != null) {
+            val serviceIntent = Intent(this, FloatingWidgetService::class.java).apply {
+                putExtra("projection_data", result.data)
+                putExtra("result_code", result.resultCode)
+            }
+            startService(serviceIntent)
+        } else {
+            Toast.makeText(this, "Screen capture permission denied.", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        projectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
 
         checkOverlayPermission()
         setupClassifier()
@@ -48,7 +69,6 @@ class MainActivity : AppCompatActivity() {
             val options = optionsBuilder.build()
             textClassifier = TextClassifier.createFromOptions(this, options)
         } catch (e: Exception) {
-            Toast.makeText(this, "Failed to initialize classifier: ${e.message}", Toast.LENGTH_LONG).show()
             e.printStackTrace()
         }
     }
@@ -57,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         val messageInput = findViewById<EditText>(R.id.messageInput)
         val classifyButton = findViewById<Button>(R.id.classifyButton)
         val resultText = findViewById<TextView>(R.id.resultText)
+        val startBubbleButton = findViewById<Button>(R.id.startBubbleButton)
 
         classifyButton.setOnClickListener {
             if (!::textClassifier.isInitialized) {
@@ -68,10 +89,26 @@ class MainActivity : AppCompatActivity() {
             if (inputText.isNotEmpty()) {
                 val classifierResult = textClassifier.classify(inputText)
                 val topCategory = classifierResult.classificationResult().classifications()[0].categories()[0]
-                val resultString = "Result: ${topCategory.categoryName()} (${String.format("%.2f", topCategory.score())})"
+                
+                val isScam = topCategory.categoryName().equals("Negative", ignoreCase = true) || 
+                             inputText.contains("win", ignoreCase = true) || 
+                             inputText.contains("prize", ignoreCase = true) ||
+                             inputText.contains("urgent", ignoreCase = true)
+
+                val resultString = if (isScam) {
+                    "Result: SCAM DETECTED! (${String.format(Locale.US, "%.2f", topCategory.score())})"
+                } else {
+                    "Result: Safe (${topCategory.categoryName()})"
+                }
                 resultText.text = resultString
+            }
+        }
+
+        startBubbleButton.setOnClickListener {
+            if (Settings.canDrawOverlays(this)) {
+                screenCaptureLauncher.launch(projectionManager.createScreenCaptureIntent())
             } else {
-                Toast.makeText(this, "Please enter some text", Toast.LENGTH_SHORT).show()
+                checkOverlayPermission()
             }
         }
     }
@@ -84,27 +121,6 @@ class MainActivity : AppCompatActivity() {
                 Uri.parse("package:$packageName")
             )
             overlayPermissionLauncher.launch(intent)
-            Toast.makeText(this, "Please grant overlay permission", Toast.LENGTH_LONG).show()
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        // Stop service when app is in foreground
-        val intent = Intent(this, FloatingWidgetService::class.java)
-        stopService(intent)
-    }
-
-    override fun onStop() {
-        super.onStop()
-        // Start service when app goes to background, unless we are just opening settings
-        if (!isAskingPermission && Settings.canDrawOverlays(this)) {
-            val intent = Intent(this, FloatingWidgetService::class.java)
-            try {
-                startService(intent)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
         }
     }
 }

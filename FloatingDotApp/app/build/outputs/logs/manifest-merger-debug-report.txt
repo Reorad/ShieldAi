@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.databinding:viewbinding:8.7.3] C:\Users\carla\.gradle\caches\9.0.0\transforms\7ae9fac1f4cbb15507076e34ac55ef40\transformed\jetified-viewbinding-8.7.3\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\0398f5242f5e91f48b9955d5399301da\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\carla\.gradle\caches\9.0.0\transforms\105cc1a8cfc9dfc754fafb926fe4c342\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -12,6 +12,14 @@ MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\carla\.gradle\caches\9
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\5863322c95625da162f851d60e48a121\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\a198cfce840bfe66d65a522ac14bc5bf\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\484956a85e7c5cd5e394ba157a201ac9\transformed\jetified-play-services-mlkit-text-recognition-19.0.0\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\31f42b5811228542307d517c15d82a3b\transformed\jetified-vision-interfaces-16.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\carla\.gradle\caches\9.0.0\transforms\4f512146dc32b36aa0a698e015e2cee7\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\carla\.gradle\caches\9.0.0\transforms\e21b1feeea65a70d3009a8fc08581a29\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\faf2978222bbbac6bd5c8c7b9cea22eb\transformed\jetified-activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\carla\.gradle\caches\9.0.0\transforms\ac68a1de562945982a7b49b15e00107e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
@@ -47,11 +55,14 @@ MERGED from [com.google.mediapipe:tasks-core:0.10.1] C:\Users\carla\.gradle\cach
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\eac5c3df50215a13320e51ac6b6dd398\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\d3f86135e61dd71ddf0c4f489c5d9ac9\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\69e5d40a91eb21a38b4f775fcb788fff\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\209fc4504f30be92eaae78bba0765ce7\transformed\jetified-firebase-components-16.1.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\ff8fb6a15eb0a0fe83e458265de342eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\fd39fd931c16ed6d05731e1ba1f58d90\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\65d4e0c71b46a2eb418fedc0ee20c062\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\08ecafc5851a39c9a750891d50df402e\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\49163216da77a4ebb4a3ec1167369309\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2636a129c637a4d28ba06bbcefee28a4\transformed\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\carla\.gradle\caches\9.0.0\transforms\458b44d666fd200d36a545dd7bfacf35\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
 	package
 		INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -64,15 +75,35 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:4:5-78
 	android:name
 		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:4:22-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:5:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:6:5-94
+	android:name
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:6:22-91
 application
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:6:5-28:19
-INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:6:5-28:19
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:8:5-31:19
+INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:8:5-31:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\0398f5242f5e91f48b9955d5399301da\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\0398f5242f5e91f48b9955d5399301da\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\carla\.gradle\caches\9.0.0\transforms\105cc1a8cfc9dfc754fafb926fe4c342\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\carla\.gradle\caches\9.0.0\transforms\105cc1a8cfc9dfc754fafb926fe4c342\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\carla\.gradle\caches\9.0.0\transforms\4f512146dc32b36aa0a698e015e2cee7\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\carla\.gradle\caches\9.0.0\transforms\4f512146dc32b36aa0a698e015e2cee7\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
 MERGED from [androidx.core:core:1.12.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\97df7dfbeaeb78f87dbb1e889c1dab74\transformed\core-1.12.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.12.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\97df7dfbeaeb78f87dbb1e889c1dab74\transformed\core-1.12.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\carla\.gradle\caches\9.0.0\transforms\ce7fcfef759d069545a394968fdc3cd6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
@@ -87,46 +118,50 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\eac5c3df50215a13320e51ac6b6dd398\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\d3f86135e61dd71ddf0c4f489c5d9ac9\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\d3f86135e61dd71ddf0c4f489c5d9ac9\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\carla\.gradle\caches\9.0.0\transforms\458b44d666fd200d36a545dd7bfacf35\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\carla\.gradle\caches\9.0.0\transforms\458b44d666fd200d36a545dd7bfacf35\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:7:5-20
 	android:extractNativeLibs
 		INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\97df7dfbeaeb78f87dbb1e889c1dab74\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:10:9-46
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:12:9-46
 	android:icon
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:10:9-41
 	android:allowBackup
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:12:9-49
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:14:9-49
 activity#com.example.floatingdot.MainActivity
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:15:13-41
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:17:13-20:29
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:21:27-74
 service#com.example.floatingdot.FloatingWidgetService
-ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:23:9-26:40
+ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:25:9-29:63
 	android:enabled
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:25:13-35
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:27:13-35
 	android:exported
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:26:13-37
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:28:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:29:13-60
 	android:name
-		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:24:13-50
+		ADDED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml:26:13-50
 uses-sdk
 INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml
@@ -147,6 +182,22 @@ MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\t
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\a198cfce840bfe66d65a522ac14bc5bf\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\a198cfce840bfe66d65a522ac14bc5bf\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\484956a85e7c5cd5e394ba157a201ac9\transformed\jetified-play-services-mlkit-text-recognition-19.0.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\484956a85e7c5cd5e394ba157a201ac9\transformed\jetified-play-services-mlkit-text-recognition-19.0.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\31f42b5811228542307d517c15d82a3b\transformed\jetified-vision-interfaces-16.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\31f42b5811228542307d517c15d82a3b\transformed\jetified-vision-interfaces-16.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\carla\.gradle\caches\9.0.0\transforms\4f512146dc32b36aa0a698e015e2cee7\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\carla\.gradle\caches\9.0.0\transforms\4f512146dc32b36aa0a698e015e2cee7\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\carla\.gradle\caches\9.0.0\transforms\e21b1feeea65a70d3009a8fc08581a29\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\carla\.gradle\caches\9.0.0\transforms\e21b1feeea65a70d3009a8fc08581a29\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\faf2978222bbbac6bd5c8c7b9cea22eb\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
@@ -217,6 +268,8 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\d3f86135e61dd71ddf0c4f489c5d9ac9\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\69e5d40a91eb21a38b4f775fcb788fff\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\69e5d40a91eb21a38b4f775fcb788fff\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\209fc4504f30be92eaae78bba0765ce7\transformed\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\209fc4504f30be92eaae78bba0765ce7\transformed\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\ff8fb6a15eb0a0fe83e458265de342eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\ff8fb6a15eb0a0fe83e458265de342eb\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\fd39fd931c16ed6d05731e1ba1f58d90\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
@@ -227,6 +280,10 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\tra
 MERGED from [androidx.print:print:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\08ecafc5851a39c9a750891d50df402e\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\49163216da77a4ebb4a3ec1167369309\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\49163216da77a4ebb4a3ec1167369309\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2636a129c637a4d28ba06bbcefee28a4\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2636a129c637a4d28ba06bbcefee28a4\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\carla\.gradle\caches\9.0.0\transforms\458b44d666fd200d36a545dd7bfacf35\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\carla\.gradle\caches\9.0.0\transforms\458b44d666fd200d36a545dd7bfacf35\transformed\jetified-image-1.0.0-beta1\AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
 		INJECTED from C:\Users\carla\StudioProjects\ShieldAi\FloatingDotApp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
@@ -253,6 +310,62 @@ ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\tr
 		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\8a358e824a53eeaf00ead63a89fa6bf7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:11:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:10:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2053e738a397504fd0cb60515277dd62\transformed\jetified-play-services-mlkit-text-recognition-common-19.0.0\AndroidManifest.xml:13:17-114
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\32d0f46c520658cd7c530976c8922ddd\transformed\jetified-vision-common-17.3.0\AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.8.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\382bd4ac88733ca7f334503df7764fb4\transformed\jetified-common-18.8.0\AndroidManifest.xml:21:17-120
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\2c1264eb239aa7b6182f924c8ae75c62\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\014c07e67627ec7e040405f9388afa92\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\carla\.gradle\caches\9.0.0\transforms\97df7dfbeaeb78f87dbb1e889c1dab74\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
