@@ -3193,6 +3193,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id classifyButton
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3439,6 +3440,7 @@ id ratio
 id rectangles
 id redDotImage
 id report_drawn
+id resultText
 id reverseSawtooth
 id right
 id rightToLeft

@@ -1,3 +1,6 @@
+// Apply the model download script
+apply(from = "download_models.gradle")
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -13,6 +16,11 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        // Ensure native libraries for emulator (x86_64) and phones (arm64-v8a) are included
+        ndk {
+            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
+        }
     }
 
     buildTypes {
@@ -31,6 +39,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    // MediaPipe requires models not to be compressed in the APK
+    androidResources {
+        noCompress += "tflite"
+    }
 }
 
 dependencies {
@@ -38,4 +50,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    
+    // MediaPipe Tasks Text dependency
+    implementation("com.google.mediapipe:tasks-text:0.10.1")
 }

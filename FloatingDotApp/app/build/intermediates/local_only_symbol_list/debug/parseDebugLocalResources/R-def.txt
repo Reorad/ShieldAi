@@ -4,8 +4,10 @@ color black
 color white
 drawable ic_lock
 drawable red_dot
+id classifyButton
 id messageInput
 id redDotImage
+id resultText
 layout activity_main
 layout floating_widget
 string app_name

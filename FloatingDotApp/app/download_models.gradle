@@ -1,0 +1,24 @@
+task downloadModels {
+    doLast {
+        def models = [
+            'https://storage.googleapis.com/mediapipe-models/text_classifier/bert_classifier/float32/1/bert_classifier.tflite',
+            'https://storage.googleapis.com/mediapipe-models/text_classifier/average_word_classifier/float32/1/average_word_classifier.tflite'
+        ]
+        def targetDir = "${project.projectDir}/src/main/assets"
+        
+        // Create the assets directory if it doesn't exist
+        mkdir targetDir
+
+        models.each { url ->
+            def fileName = url.substring(url.lastIndexOf('/') + 1)
+            def destFile = new File(targetDir, fileName)
+            if (!destFile.exists()) {
+                println "Downloading ${fileName}..."
+                ant.get(src: url, dest: destFile)
+            }
+        }
+    }
+}
+
+// Ensure the models are downloaded before the project builds
+preBuild.dependsOn downloadModels
