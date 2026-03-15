@@ -1,45 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    app:cardBackgroundColor="#FFCDD2"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="10dp">
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#FFF5F5"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="12dp"
+    app:strokeColor="@color/scam_red"
+    app:strokeWidth="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_shield_blue"
+            app:tint="@color/scam_red"
+            android:layout_marginBottom="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⚠️ SCAM WARNING"
-            android:textColor="#B71C1C"
-            android:textSize="24sp"
+            android:text="HIGH RISK DETECTED"
+            android:textColor="@color/scam_red"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:letterSpacing="0.05" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="The content on your screen looks suspicious! Do not click any links or share personal info."
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/closeWarning"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:text="I Understand"
-            android:backgroundTint="#B71C1C" />
+            android:text="ShieldAI has identified highly suspicious activity on your screen. This looks like a scam attempt."
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:lineSpacingExtra="4dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="⚠️ DO NOT provide passwords, OTPs, or credit card details."
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/closeWarning"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:text="I AM AWARE, CLOSE"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/scam_red"
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

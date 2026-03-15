@@ -4,25 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent_blue"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_blue">
+        android:background="@color/primary_blue"
+        app:elevation="0dp">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="ShieldAI Anti-Scam"
-            app:titleTextColor="@color/white" />
+            app:titleTextColor="@color/white"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -32,10 +36,10 @@
             android:padding="24dp">
 
             <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:src="@drawable/ic_shield_blue"
                 android:contentDescription="Shield Logo" />
 
@@ -43,74 +47,66 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:text="Protection Active"
                 android:textColor="@color/primary_dark_blue"
-                android:textSize="20sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Your device is being monitored for scams"
+                android:textColor="@color/text_grey"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Manual Analysis Section (Now at Top) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quick Settings"
+                        android:text="Analyze Suspicious Text"
                         android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/autoScanSwitch"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="One-Tap Auto Scan"
-                        android:subtitle="Scan immediately when clicking the bubble" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="If disabled, single tap opens app, double tap scans."
-                        android:textSize="12sp"
-                        android:textColor="@color/text_grey"
-                        android:layout_marginBottom="8dp"/>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_dark_blue"
+                        android:layout_marginBottom="16dp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Manual Text Check">
+                        android:hint="Paste suspicious message or URL here"
+                        app:boxStrokeColor="@color/primary_blue"
+                        app:hintTextColor="@color/primary_blue"
+                        app:placeholderText="Example: You have won a $1000 gift card..."
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/messageInput"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:minLines="3"
+                            android:gravity="top"
+                            android:textSize="16sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,20 +114,72 @@
                         android:id="@+id/classifyButton"
                         style="@style/Widget.MaterialComponents.Button"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Check for Scams"
-                        android:backgroundTint="@color/primary_blue" />
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Run Security Check"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/primary_blue"
+                        app:cornerRadius="12dp" />
 
                     <TextView
                         android:id="@+id/resultText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="16dp"
                         android:textAlignment="center"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
-                        tools:text="Result: Safe" />
+                        android:textColor="@color/primary_dark_blue"
+                        tools:text="Result: No threats detected" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Scan App Section (Renamed Switch) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/accent_blue"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan App"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_dark_blue"
+                        android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/autoScanSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enable App Scanning"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:thumbTint="@color/primary_blue"
+                        app:trackTint="@color/primary_blue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Placeholder for future app scanning functionality."
+                        android:textSize="14sp"
+                        android:textColor="@color/text_grey"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -140,12 +188,16 @@
                 android:id="@+id/startBubbleButton"
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginTop="32dp"
-                android:text="Launch Anti-Scam Shield"
+                android:layout_height="72dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="32dp"
+                android:text="Launch Protection Bubble"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:icon="@drawable/ic_shield_blue"
+                app:iconSize="28dp"
                 app:iconTint="@color/white"
-                app:cornerRadius="32dp"
+                app:cornerRadius="16dp"
                 android:backgroundTint="@color/primary_dark_blue" />
 
         </LinearLayout>

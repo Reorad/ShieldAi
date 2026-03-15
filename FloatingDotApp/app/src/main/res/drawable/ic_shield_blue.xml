@@ -1,12 +1,28 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Shield — marine blue, rounded top corners, transparent background -->
     <path
-        android:fillColor="#1E88E5"
-        android:pathData="M12,1L3,5v6c0,5.55 3.84,10.74 9,12c5.16,-1.26 9,-6.45 9,-12V5L12,1z"/>
+        android:pathData="M20,12 Q15,12 15,18 L15,56 C15,76 50,92 50,92 C50,92 85,76 85,56 L85,18 Q85,12 80,12 Z"
+        android:fillColor="#1B4F8A"/>
+
+    <!-- "A" in white — evenOdd creates the hollow triangle center -->
     <path
-        android:fillColor="#BBDEFB"
-        android:pathData="M12,3L5,6.11v4.89c0,4.55 3.12,8.79 7,9.9c3.88,-1.11 7,-5.35 7,-9.9V6.11L12,3zM11,7h2v2h-2V7zM11,11h2v6h-2V11z"/>
+        android:fillType="evenOdd"
+        android:pathData="M42,32 L48,32 L63,69 L57,69 L53,57 L37,57 L33,69 L27,69 Z M45,38 L40,53 L50,53 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- "i" stem -->
+    <path
+        android:pathData="M64,41 L70,41 L70,69 L64,69 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- "i" dot — circle centered above stem -->
+    <path
+        android:pathData="M67,28 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#FFFFFF"/>
+
 </vector>

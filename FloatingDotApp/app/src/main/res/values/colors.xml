@@ -2,9 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_blue">#1E88E5</color>
-    <color name="primary_dark_blue">#1565C0</color>
-    <color name="accent_blue">#E3F2FD</color>
+    <color name="primary_blue">#005D8F</color>
+    <color name="primary_dark_blue">#003D5C</color>
+    <color name="accent_blue">#F0F7FA</color>
     <color name="scam_red">#B71C1C</color>
     <color name="scam_red_light">#FFCDD2</color>
     <color name="text_grey">#757575</color>
