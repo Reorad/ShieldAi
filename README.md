@@ -1,6 +1,6 @@
 # 🛡️ ShieldAI
 
-> [cite_start]*"We shield you and your money"* [cite: 22, 23, 24]
+"We shield you and your money"
 
 ## 📖 About the Project
 [cite_start]Shield AI is a mobile application designed to verify messages and predominantly the links within them to prevent phishing attacks[cite: 25, 26]. Developed as a Hackathon MVP, it provides an accessible, real-time layer of security against SMS scams, social engineering, and malicious URLs. 
